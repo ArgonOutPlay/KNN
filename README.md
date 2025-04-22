@@ -10,5 +10,5 @@
   - word_pairs.txt - Vytvořené z random_words.txt s využitím generátoru dvojic (pairs_gen.py)
   - czech_words.txt - Smysluplnější slova až trojice slov vytvořené s využitím chatGPT.
 #### Scripty pro generování syntetických obrázků
-  - pairs_gen.py
-  - image_gen.py
+  - pairs_gen.py - Generátor dvojic slov ze seznamu slov.
+  - image_gen.py - Generátor obrázků z textového dokumentu slov. Využívá [trdg](https://github.com/Belval/TextRecognitionDataGenerator/tree/master).
