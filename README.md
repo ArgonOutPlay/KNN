@@ -1,6 +1,6 @@
 # Přepis ozdobných nápisů
 ### Baseline
-  - knn.ipynb - Načtení a otestování přesnosti ParSEQ modelu.
+  - knn.ipynb - Načtení a otestování přesnosti [ParSEQ](https://github.com/baudm/parseq) modelu.
 ### Analýza datové sady
   - dataStat.py - Analýza délky slov a výskytu znaků podle labels.
   - imageRes.py - Analýza velikosti obrázků dle obrázků.
