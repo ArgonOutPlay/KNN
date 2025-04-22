@@ -1,4 +1,0 @@
-Textové soubory využitelné pro generování syntetických obrázků:
-  - random_words.txt - Vytvořené generátorem náhodných slov.
-  - word_pairs.txt - Vytvořené z random_words.txt s využitím generátoru dvojic (pairs_gen.py)
-  - czech_words.txt - Smysluplnější slova až trojice slov vytvořené s využitím chatGPT.
