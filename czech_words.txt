@@ -1,0 +1,70 @@
+Ahoj  
+Pozor  
+Nebezpečí  
+Vstup zakázán  
+Přechod pro chodce  
+Zákaz kouření  
+Hasiči  
+Východ  
+Toalety  
+Sklad  
+Zastávka  
+Není povoleno  
+Prodejna  
+Trestné činy  
+Služby  
+Opravy  
+Vstup na vlastní nebezpečí  
+Práce na silnici  
+Hlavní vchod  
+Vstup pouze pro zaměstnance  
+Neparkovat  
+Tísňové volání  
+Nouzový východ  
+Zavřeno  
+Otevřeno  
+Uklouznutí hrozí  
+Elektrické zařízení  
+Bezpečnostní pás  
+Zpomalte  
+Silniční práce  
+Nebezpečí pádu  
+Uzavřeno z důvodu údržby  
+Horký povrch  
+Nedotýkat se  
+Bezpečnost především  
+Omezený přístup  
+Návštěvy hlaste na vrátnici  
+Stroj v provozu  
+Těžká technika  
+Zákaz vstupu s jídlem  
+Pouze pro personál  
+Parkoviště  
+Rezervováno  
+Výdejní okénko  
+Zákaz používání mobilních telefonů  
+Pozor – schod  
+Udržujte čistotu  
+Ticho, zkouška probíhá  
+Zákaz vstupu se zvířaty  
+Vstup v přezůvkách  
+Bezpečnostní kontrola  
+Hlídaný objekt  
+Přístup odepřen  
+Pod napětím  
+Označené místo  
+Výtah mimo provoz  
+Kouření povoleno  
+Nevhazujte odpadky  
+Noste přilbu  
+Zákaz fotografování  
+Vyhrazené místo  
+Hygienická stanice  
+Noste roušku  
+Noste ochranné brýle  
+Zákaz vstupu dětí  
+Návštěva pouze na objednání  
+Ruční mytí  
+Samoobsluha  
+Pouze výdej  
+Uzamčeno  
