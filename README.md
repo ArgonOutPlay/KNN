@@ -12,3 +12,6 @@
 #### Scripty pro generování syntetických obrázků
   - pairs_gen.py - Generátor dvojic slov ze seznamu slov.
   - image_gen.py - Generátor obrázků z textového dokumentu slov. Využívá [trdg](https://github.com/Belval/TextRecognitionDataGenerator/tree/master).
+### Tvorba datové sady
+- filtr_labels.py - Pomocný program pro odstranění neanotovaných řádků z labelů a změna cest.
+- filtr_images.py - Pomocný program pro vytvoření složky obrázků, obsahujících pouze anotované vzorky.
