@@ -26,4 +26,9 @@
 - filtr_labels.py - Pomocný program pro odstranění neanotovaných řádků z labelů a změna cest.
 - filtr_images.py - Pomocný program pro vytvoření složky obrázků, obsahujících pouze anotované vzorky.
 
+### Použité nástroje
+| Submodul                     |   Cesta              |  Licence      | Licenční soubor                            |
+|------------------------------|-----------------|-------------------|-----------------------|
+| [PARSeq](https://github.com/baudm/parseq)                       | external/parseq                       | Apache 2.0   | [LICENSE](external/parseq/LICENSE)        |
+| [TextRecognitionDataGenerator](https://github.com/Belval/TextRecognitionDataGenerator) | external/TextRecognitionDataGenerator | MIT       | [LICENSE](external/TextRecognitionDataGenerator/LICENSE) |
 
