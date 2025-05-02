@@ -4,7 +4,7 @@
 ### Natrénované modely
   - Na tomto [odkazu](https://drive.google.com/drive/folders/1jsmSuNVoA33oGUKzIUBaNZN2STZSDUtC) naleznete dotrénovaný model na datovou sadu Wordart a natrénovaný model na český jazyk a mezery.
   - Výsledky modelu v porovnání s jinými můžete vidět v tabulce níže.
-![Porovnání OCR výstupů různých modelů na příkladech i s českými slovy.](Figures/porovnaniOCR.png)
+![Porovnání OCR výstupů různých modelů na příkladech i s českými slovy.](Figures/porovnaniOCRotocene.png)
 ### Použité datové sady
  - datové sady použité taktéž při trénování PARSeq, jsou dostupné [zde](https://github.com/baudm/parseq/blob/main/Datasets.md).
  - ostatní datové [sady](https://drive.google.com/drive/folders/1Aqv98d6O5m63FeeysN_s6VxpA8nlGTKJ), jedná se o Wordart, naši syntetickou datovou sadu pro trénování na češtinu a mezery a sadu s historických dokumentů.
