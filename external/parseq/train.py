@@ -49,6 +49,13 @@ def get_swa_lr_factor(warmup_pct, swa_epoch_start, div_factor=25, final_div_fact
     pct = (step_num - start_step) / (end_step - start_step)
     return _annealing_cos(1, 1 / (div_factor * final_div_factor), pct)
 
+# load part of the state dict
+def load_partial(model, pretrained_dict):
+    model_dict = model.state_dict()
+    # filter out unwanted parts
+    filtered = {k: v for k, v in pretrained_dict.items() if k in model_dict and v.shape == model_dict[k].shape}
+    model_dict.update(filtered)
+    model.load_state_dict(model_dict)
 
 @hydra.main(config_path='configs', config_name='main', version_base='1.2')
 def main(config: DictConfig):
@@ -79,6 +86,7 @@ def main(config: DictConfig):
     if config.pretrained is not None:
         m = model.model if config.model._target_.endswith('PARSeq') else model
         m.load_state_dict(get_pretrained_weights(config.pretrained))
+        #load_partial(m, get_pretrained_weights(config.pretrained))
     print(summarize(model, max_depth=2))
 
     datamodule: SceneTextDataModule = hydra.utils.instantiate(config.data)
