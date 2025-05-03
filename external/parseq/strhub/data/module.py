@@ -30,6 +30,10 @@ class SceneTextDataModule(pl.LightningDataModule):
     TEST_NEW = ('ArT', 'COCOv1.4', 'Uber')
     TEST_ALL = tuple(set(TEST_BENCHMARK_SUB + TEST_BENCHMARK + TEST_NEW))
 
+    TEST_WORDART = ('wordart',)
+    TEST_NOVINY = ('Noviny',)
+    TEST_SYNTH100K = ('Synth100k',)
+
     def __init__(
         self,
         root_dir: str,
