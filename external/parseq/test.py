@@ -73,6 +73,8 @@ def main():
     parser.add_argument('--data_root', default='data')
     parser.add_argument('--batch_size', type=int, default=512)
     parser.add_argument('--num_workers', type=int, default=4)
+    parser.add_argument('--keep_whitespaces', action='store_true', default=False, help='Keep whitespaces in labels')
+    parser.add_argument('--keep_unicode', action='store_true', default=False, help='Keep unicode in labels')
     parser.add_argument('--cased', action='store_true', default=False, help='Cased comparison')
     parser.add_argument('--punctuation', action='store_true', default=False, help='Check punctuation')
     parser.add_argument('--new', action='store_true', default=False, help='Evaluate on new benchmark datasets')
@@ -81,13 +83,14 @@ def main():
     args, unknown = parser.parse_known_args()
     kwargs = parse_model_args(unknown)
 
-    charset_test = string.digits + string.ascii_lowercase
-    if args.cased:
-        charset_test += string.ascii_uppercase
-    if args.punctuation:
-        charset_test += string.punctuation
-    kwargs.update({'charset_test': charset_test})
-    print(f'Additional keyword arguments: {kwargs}')
+    # keep the charset_test character set stored in the model
+    #charset_test = string.digits + string.ascii_lowercase
+    #if args.cased:
+    #    charset_test += string.ascii_uppercase
+    #if args.punctuation:
+    #    charset_test += string.punctuation
+    #kwargs.update({'charset_test': charset_test})
+    #print(f'Additional keyword arguments: {kwargs}')
 
     model = load_from_checkpoint(args.checkpoint, **kwargs).eval().to(args.device)
     hp = model.hparams
@@ -102,9 +105,13 @@ def main():
         args.num_workers,
         False,
         rotation=args.rotation,
+        remove_whitespace=(not args.keep_whitespaces),
+        normalize_unicode=(not args.keep_unicode),
     )
 
-    test_set = SceneTextDataModule.TEST_BENCHMARK_SUB + SceneTextDataModule.TEST_BENCHMARK
+    #test_set = SceneTextDataModule.TEST_BENCHMARK_SUB + SceneTextDataModule.TEST_BENCHMARK
+    test_set = SceneTextDataModule.TEST_WORDART + SceneTextDataModule.TEST_SYNTH100K + SceneTextDataModule.TEST_NOVINY
+
     if args.new:
         test_set += SceneTextDataModule.TEST_NEW
     test_set = sorted(set(test_set))
@@ -130,10 +137,16 @@ def main():
         mean_label_length = label_length / total
         results[name] = Result(name, total, accuracy, mean_ned, mean_conf, mean_label_length)
 
+    #result_groups = {
+    #    'Benchmark (Subset)': SceneTextDataModule.TEST_BENCHMARK_SUB,
+    #    'Benchmark': SceneTextDataModule.TEST_BENCHMARK,
+    #}
     result_groups = {
-        'Benchmark (Subset)': SceneTextDataModule.TEST_BENCHMARK_SUB,
-        'Benchmark': SceneTextDataModule.TEST_BENCHMARK,
+        'Wordart': SceneTextDataModule.TEST_WORDART,
+        'Synth100k': SceneTextDataModule.TEST_SYNTH100K,
+        'Noviny': SceneTextDataModule.TEST_NOVINY,
     }
+
     if args.new:
         result_groups.update({'New': SceneTextDataModule.TEST_NEW})
     with open(args.checkpoint + '.log.txt', 'w') as f:
